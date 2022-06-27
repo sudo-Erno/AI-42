@@ -53,5 +53,5 @@ class Sequential():
                 if activation_function:
                     z = activation_function(z)
 
-        return z
+        return z.flatten()
     

@@ -10,6 +10,16 @@ def MSE(labels, predictions):
 
     return np.sum((labels - predictions)**2) / samples_length
 
+def d_MSE(labels, predictions):
+    if not isinstance(labels, np.ndarray) or not isinstance(predictions, np.ndarray):
+        print("labels and predictions must be numpy array.")
+        quit()
+
+    samples_length = labels.shape[0]
+
+    return np.sum((labels - predictions)*2) / samples_length
+    
+
 def BinaryCrossEntropy(labels, predictions):
     
     if not isinstance(labels, np.ndarray) or not isinstance(predictions, np.ndarray):

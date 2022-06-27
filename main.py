@@ -12,9 +12,9 @@ test_labels = [0, 1, 0]
 test_inputs = np.array(test_inputs)
 test_labels = np.array(test_labels)
 
-l1 = Linear(2, activation="ReLU")
-l2 = Linear(4, activation="ReLU")
-l3 = Linear(1, activation="Sigmoid")
+l1 = Linear(1, activation="ReLU")
+l2 = Linear(1, activation="ReLU")
+l3 = Linear(1, activation="ReLU")
 
 model = Sequential([
     l1,
@@ -24,5 +24,6 @@ model = Sequential([
 
 y_pred = model.forward(test_inputs, test_labels, epochs=1)
 # loss = Loss.MSE(test_labels, y_pred)
+print(y_pred)
 
 GD(Loss.MSE, model, test_labels, y_pred)
